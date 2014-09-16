@@ -20,7 +20,7 @@ class SocketIO extends Adapter
 
       socket.on 'message', (message) =>
         user = @robot.brain.userForId socket.id
-        @receive new TextMessage user, message
+        @receive new TextMessage user, message.replace(/^!/, @robot.name)
 
       socket.on 'disconnect', =>
         delete @sockets[socket.id]
