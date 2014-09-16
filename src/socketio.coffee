@@ -2,10 +2,10 @@
 
 class SocketIO extends Adapter
 
-  constructor: (@robot) ->
+  constructor: (robot) ->
     @sockets = {}
     @io = require('socket.io').listen robot.server
-    super @robot
+    super robot
 
   send: (envelope, strings...) ->
     socket = @sockets[envelope.user.id]
@@ -15,7 +15,7 @@ class SocketIO extends Adapter
   reply: @prototype.send
 
   run: ->
-    @io.sockets.on 'connection', (socket) =>
+    @io.on 'connection', (socket) =>
       @sockets[socket.id] = socket
 
       socket.on 'message', (message) =>
