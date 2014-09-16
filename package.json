@@ -1,16 +1,16 @@
 {
-  "name":        "hubot-socket.io",
-  "version":     "2.3.0",
-  "author":      "Travis Jeffery",
-  "keywords":    "github hubot socket.io socketio",
+  "name":        "hubot-socket.io-adapter",
+  "version":     "1.1.0",
+  "author":      "Andrea Pavoni",
+  "keywords":    "github hubot socket.io adapter",
   "description": "A Socket.IO adapter for hubot",
   "licenses":     [{
     "type":       "MIT",
-    "url":        "https://raw.github.com/travisjeffery/hubot-socket.io/master/LICENSE.md"
+    "url":        "https://raw.github.com/apeacox/hubot-socket.io-adapter/master/LICENSE.md"
   }],
   "repository" : {
     "type" : "git",
-    "url" : "http://github.com/travisjeffery/hubot-socket.io.git"
+    "url" : "http://github.com/apeacox/hubot-socket.io-adapter.git"
   },
   "dependencies": {
     "socket.io": "1.1.0"
