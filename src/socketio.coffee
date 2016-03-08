@@ -15,6 +15,8 @@ class SocketIO extends Adapter
   reply: @prototype.send
 
   run: ->
+    @robot.logger.info "I'm running .."
+    @emit 'connected'
     @io.on 'connection', (socket) =>
       @sockets[socket.id] = socket
 
@@ -24,8 +26,6 @@ class SocketIO extends Adapter
 
       socket.on 'disconnect', =>
         delete @sockets[socket.id]
-
-    @emit 'connected'
 
 exports.use = (robot) ->
   new SocketIO robot
