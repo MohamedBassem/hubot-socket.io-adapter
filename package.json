@@ -10,7 +10,7 @@
   }],
   "repository" : {
     "type" : "git",
-    "url" : "http://github.com/apeacox/hubot-socket.io-adapter.git"
+    "url" : "http://github.com/MohamedBassem/hubot-socket.io-adapter.git"
   },
   "dependencies": {
     "socket.io": "1.1.0"
