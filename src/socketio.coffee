@@ -2,10 +2,10 @@
 
 class SocketIO extends Adapter
 
-  constructor: (robot) ->
+  constructor: ->
     @sockets = {}
-    @io = require('socket.io').listen robot.server
-    super robot
+    @io = require('socket.io').listen @robot.server
+    super
 
   send: (envelope, strings...) ->
     socket = @sockets[envelope.user.id]
@@ -20,7 +20,7 @@ class SocketIO extends Adapter
 
       socket.on 'message', (message) =>
         user = @robot.brain.userForId socket.id
-        @receive new TextMessage user, message.replace(/^!/, @robot.name)
+        @robot.receive new TextMessage(user, message.replace(/^!/, @robot.name))
 
       socket.on 'disconnect', =>
         delete @sockets[socket.id]
