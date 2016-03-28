@@ -22,7 +22,7 @@ class SocketIO extends Adapter
 
       socket.on 'message', (message) =>
         @userToSocket[message.convId] = socket.id
-        user = @robot.brain.userForId message.convId
+        user = @robot.brain.userForId message.senderId, room: message.convId, name: message.senderName
         @robot.receive new TextMessage(user, message.message)
 
       socket.on 'disconnect', =>
